@@ -7,12 +7,15 @@
   <link rel="stylesheet" href="styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
   <header class="header">
     <div class="header-inner">
-      <a href="#" class="logo">Coefficient</a>
+      <a href="#" class="logo-wrap">
+        <span class="logo-mark"></span>
+        <span class="logo">Coefficient</span>
+      </a>
       <nav class="nav">
         <a href="#how-it-works">How it works</a>
         <a href="#why-this-matters">Why this matters</a>
@@ -118,7 +121,26 @@
       </div>
     </section>
 
-    <section class="section cta-section" id="cta">
+    <section class="section about-us" id="about">
+      <div class="section-inner">
+        <h2 class="section-title">Who we are</h2>
+        <div class="about-content">
+          <p>Coefficient is built by a team with deep experience in training, assessment, and software for high-stakes physical work.</p>
+          <p>Louis has spent his career at the intersection of education, product, and industrial systems — starting as a secondary school teacher, then moving into product leadership and founding teams. Most recently, he led product at a simulation and training company building software used in safety-critical environments across heavy industry and infrastructure.</p>
+          <p>Jonty is a hands-on technical builder with experience delivering complex systems for training, assessment, and operational workflows. He has worked across engineering and product roles, shipping real software used by professionals in regulated, real-world contexts.</p>
+          <p><strong>Together, we've:</strong></p>
+          <ul class="about-list">
+            <li>Built training and assessment platforms used in classrooms and industrial settings</li>
+            <li>Led and coordinated multi-disciplinary technical teams</li>
+            <li>Shipped software where procedure adherence, evidence, and correctness matter</li>
+          </ul>
+          <p>We're now applying those lessons to a harder problem: helping engineers complete physical work faster, with fewer mistakes, and without the overhead of manual supervision or paperwork.</p>
+          <p>Coefficient exists because we've seen first-hand how much time is lost between "doing the work" and "proving the work was done correctly" — and we believe AI can close that gap.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section section-alt" id="cta">
       <div class="section-inner cta-inner">
         <a href="https://tally.so/r/WO5oMk" class="btn btn-primary btn-large">Register your interest</a>
         <p class="cta-supporting">Join early pilots and help shape the future of AI-assisted physical work.</p>
@@ -128,7 +150,45 @@
 
   <footer class="footer">
     <div class="footer-inner">
-      <p><a href="https://loki.build" target="_blank" rel="noopener">Made with love in</a></p>
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="logo-mark footer-logo-mark"></span>
+          <span class="footer-logo">Coefficient</span>
+        </div>
+        <p class="footer-tagline">Standardising assessment for the physical world.</p>
+      </div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="#how-it-works">Platform</a></li>
+            <li><a href="#coming-soon">Skills Library</a></li>
+            <li><a href="#positioning">Hardware Specs</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="https://tally.so/r/WO5oMk">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-copy">© 2024 Coefficient AI Inc.</p>
+        <p class="footer-powered">
+          <a href="https://loki.build" target="_blank" rel="noopener">Made with love in</a>
+          <span class="footer-sep"> · </span>
+          <a href="https://loki.build" target="_blank" rel="noopener">Powered by Loki.Build</a>
+        </p>
+      </div>
     </div>
   </footer>
 
