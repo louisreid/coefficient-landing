@@ -8,7 +8,7 @@ export default function Hero() {
       className="relative content-px pt-12 pb-28 lg:flex lg:min-h-[600px] lg:items-center lg:gap-12 lg:py-16"
       aria-label="Hero"
     >
-      <div className="mx-auto w-full max-w-7xl lg:flex lg:items-center lg:gap-12">
+      <div className="mx-auto w-full max-w-6xl lg:flex lg:items-center lg:gap-12">
         {/* Left column: text + CTAs — reference typography (hero-headline, hero-subhead, btn) */}
         <div className="lg:flex-1 lg:max-w-xl">
           <h1 className="hero-headline">
@@ -153,7 +153,7 @@ export default function Hero() {
                 className="absolute inset-0 bg-gray-700 bg-cover bg-center bg-no-repeat"
                 style={{
                   backgroundImage: "url(/images/hero-phone-bg.png)",
-                  backgroundPosition: "80% 50%",
+                  backgroundPosition: "57% 50%",
                 }}
               />
               <div className="absolute bottom-6 left-0 right-0 flex justify-center">
