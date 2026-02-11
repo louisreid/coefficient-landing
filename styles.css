@@ -11,8 +11,15 @@
   --colors-surface-base-20: rgba(245, 245, 244, 0.2);
   --colors-surface-card: rgba(255, 255, 255, 1);
   --colors-surface-dark: rgba(28, 25, 23, 1);
-  --colors-status-success: rgba(13, 148, 136, 1);
-  --colors-status-success-10: rgba(13, 148, 136, 0.1);
+  --colors-surface-dark-5: rgba(28, 25, 23, 0.05);
+  --colors-status-success: rgba(255, 59, 48, 1);
+  --colors-status-success-10: rgba(255, 59, 48, 0.1);
+  --colors-status-critical: rgba(220, 38, 38, 1);
+  --colors-status-critical-10: rgba(220, 38, 38, 0.1);
+  --colors-status-warning: rgba(234, 88, 12, 1);
+  --colors-status-warning-90: rgba(234, 88, 12, 0.9);
+  --colors-status-ok: rgba(34, 197, 94, 1);
+  --colors-status-ok-10: rgba(34, 197, 94, 0.1);
   --colors-black-5: rgba(0, 0, 0, 0.05);
   --colors-black-10: rgba(0, 0, 0, 0.1);
   --colors-text-primary-5: rgba(28, 25, 23, 0.05);
@@ -21,9 +28,9 @@
   --colors-text-primary-30: rgba(28, 25, 23, 0.3);
   --colors-gray-200: rgba(229, 231, 235, 1);
 
-  /* Typography (reference) */
-  --fontFamily-display: "Space Grotesk", sans-serif;
-  --fontFamily-body: Inter, sans-serif;
+  /* Typography (reference) — next/font vars take precedence in Next app */
+  --fontFamily-display: var(--font-space-grotesk, "Space Grotesk", sans-serif);
+  --fontFamily-body: var(--font-inter, "Inter", sans-serif);
   --fontWeight-medium: 500;
   --fontWeight-semibold: 600;
   --fontWeight-bold: 700;
@@ -65,6 +72,12 @@
   --px-section: 24px;
 }
 
+/* Match header horizontal padding for hero and any content that should align */
+.content-px {
+  padding-left: var(--px-section);
+  padding-right: var(--px-section);
+}
+
 @media (min-width: 1280px) {
   :root {
     --px-section: 2rem;
@@ -89,8 +102,7 @@ html {
 }
 
 body {
-  margin: 0 auto;
-  max-width: var(--max-w-7xl);
+  margin: 0;
   font-family: var(--fontFamily-body);
   font-size: var(--fontSize-base);
   line-height: 1.5;
@@ -150,8 +162,8 @@ a:hover {
 .logo-mark {
   width: 24px;
   height: 24px;
-  background: var(--colors-text-primary);
-  border-radius: var(--borderRadius-sm);
+  background: #FF3B30;
+  border-radius: 100px;
   flex-shrink: 0;
 }
 
@@ -316,6 +328,32 @@ a:hover {
 .section-inner {
   max-width: var(--max-w-7xl);
   margin: 0 auto;
+}
+
+/* Legal / long-form content: reference typography for h2 and p */
+.section-inner > h2:not(.section-title) {
+  font-family: var(--fontFamily-display);
+  font-size: var(--fontSize-xl);
+  font-weight: var(--fontWeight-semibold);
+  line-height: 1.3;
+  color: var(--colors-text-primary);
+  margin: var(--spacing-10) 0 var(--spacing-3);
+}
+
+.section-inner > h2:not(.section-title):first-of-type {
+  margin-top: var(--spacing-8);
+}
+
+.section-inner > p:not(.section-tagline) {
+  font-family: var(--fontFamily-body);
+  font-size: var(--fontSize-base);
+  line-height: 1.6;
+  color: var(--colors-text-primary);
+  margin: 0 0 var(--spacing-6);
+}
+
+.section-inner > p:not(.section-tagline):last-child {
+  margin-bottom: 0;
 }
 
 /* Alternate sections: dark background, white text (like reference site) */
@@ -557,7 +595,6 @@ a:hover {
 
 /* About us */
 .about-content {
-  max-width: 40rem;
   margin-top: var(--spacing-6);
 }
 
@@ -595,6 +632,78 @@ a:hover {
   font-weight: var(--fontWeight-bold);
 }
 
+.founders-photo {
+  margin-top: var(--spacing-8);
+  margin-bottom: var(--spacing-10);
+  display: flex;
+  justify-content: center;
+}
+
+.founders-photo-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.founders-photo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .founders-photo-circle {
+    width: 240px;
+    height: 240px;
+  }
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--spacing-8);
+  margin-bottom: var(--spacing-8);
+}
+
+@media (max-width: 768px) {
+  .founders-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.founder-card {
+  background: var(--colors-surface-card);
+  border-radius: var(--borderRadius-xl);
+  padding: var(--spacing-6);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.06);
+}
+
+.founder-card h3 {
+  margin: 0 0 var(--spacing-2);
+  font-family: var(--fontFamily-display);
+  font-size: var(--fontSize-xl);
+}
+
+.founder-role {
+  margin: 0 0 var(--spacing-4);
+  font-size: var(--fontSize-sm);
+  color: var(--colors-text-muted);
+}
+
+.founder-card p {
+  margin: 0 0 var(--spacing-2);
+  font-size: var(--fontSize-lg);
+  line-height: 1.6;
+  color: var(--colors-text-secondary);
+}
+
+.founder-card p:last-child {
+  margin-bottom: 0;
+}
+
 /* Final CTA */
 .cta-section {
   text-align: center;
@@ -614,7 +723,7 @@ a:hover {
   margin: 0;
 }
 
-/* Footer — reference: bg-surface-dark text-white, multi-column, Powered by Loki.Build */
+/* Footer — dark background, multi-column */
 .footer {
   background: var(--colors-surface-dark);
   color: var(--colors-white);
@@ -650,8 +759,11 @@ a:hover {
 .footer-logo-mark {
   width: 24px;
   height: 24px;
-  background: var(--colors-white);
-  border-radius: var(--borderRadius-sm);
+  background: #FF3B30;
+  border-radius: 100px;
+  color: rgba(255, 59, 48, 1);
+  border: none;
+  border-color: transparent;
 }
 
 .footer-logo {
@@ -714,24 +826,10 @@ a:hover {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.footer-copy,
-.footer-powered {
+.footer-copy {
   font-size: var(--fontSize-xs);
   color: rgba(255, 255, 255, 0.6);
   margin: 0;
-}
-
-.footer-powered a {
-  color: rgba(255, 255, 255, 0.6);
-}
-
-.footer-powered a:hover {
-  color: var(--colors-white);
-}
-
-.footer-sep {
-  color: rgba(255, 255, 255, 0.4);
-  pointer-events: none;
 }
 
 /* Responsive */
@@ -746,7 +844,8 @@ a:hover {
   }
 
   .section,
-  .hero {
+  .hero,
+  .content-px {
     padding-left: var(--spacing-4);
     padding-right: var(--spacing-4);
   }

@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Legacy homepage styles (sections, header, footer) */
+@import "../styles.css";
+
+/*
+ * Do NOT redefine --font-space-grotesk or --font-inter here.
+ * next/font sets them on <html> via layout.tsx; redefining on :root overrides
+ * those values and breaks font loading (browser then uses unloaded "Inter"/"Space Grotesk" and falls back to system sans-serif).
+ * styles.css uses var(--font-*, "fallback") so static HTML pages still get fonts via Google Fonts link.
+ */
+
+body {
+  @apply antialiased;
+  font-family: var(--font-inter), sans-serif;
+}
