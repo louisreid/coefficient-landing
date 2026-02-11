@@ -1,8 +1,11 @@
-import Link from "next/link";
+"use client";
 
-const REGISTER_URL = "https://tally.so/r/WO5oMk";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
     <header className="header">
       <div className="header-inner">
@@ -10,13 +13,27 @@ export default function Header() {
           <span className="logo-mark" />
           <span className="logo">Coefficient</span>
         </Link>
-        <nav className="nav">
-          <Link href="/#how-it-works">How it works</Link>
-          <Link href="/#why-this-matters">Why this matters</Link>
-          <Link href="/#coming-soon">Coming soon</Link>
-          <a href={REGISTER_URL} className="nav-cta">
-            Register your interest
-          </a>
+        <button
+          type="button"
+          className="header-burger"
+          aria-expanded={menuOpen}
+          aria-label="Toggle menu"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span className="header-burger-bar" />
+          <span className="header-burger-bar" />
+          <span className="header-burger-bar" />
+        </button>
+        <nav className={`nav ${menuOpen ? "nav--open" : ""}`}>
+          <Link href="/#how-it-works" onClick={() => setMenuOpen(false)}>
+            How it works
+          </Link>
+          <Link href="/#why-this-matters" onClick={() => setMenuOpen(false)}>
+            Why this matters
+          </Link>
+          <Link href="/#coming-soon" onClick={() => setMenuOpen(false)}>
+            Coming soon
+          </Link>
         </nav>
       </div>
     </header>

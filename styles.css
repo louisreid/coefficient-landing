@@ -140,10 +140,12 @@ a:hover {
   max-width: var(--max-w-7xl);
   margin: 0 auto;
   padding: 0 var(--px-section);
-  height: var(--spacing-20);
+  min-height: var(--spacing-20);
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+  gap: var(--spacing-4);
 }
 
 .logo-wrap {
@@ -194,20 +196,46 @@ a:hover {
   text-decoration: none;
 }
 
-.nav-cta {
-  background: var(--colors-text-primary) !important;
-  color: var(--colors-white) !important;
-  font-size: var(--fontSize-sm) !important;
-  font-weight: var(--fontWeight-medium) !important;
-  padding: 10px var(--spacing-5) !important;
-  border-radius: var(--borderRadius-md) !important;
-  transition: background-color 0.2s !important;
+/* Burger button — visible only on mobile */
+.header-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: none;
+  border-radius: var(--borderRadius-md);
+  background: transparent;
+  color: var(--colors-text-primary);
+  cursor: pointer;
+  transition: background-color 0.2s;
 }
 
-.nav-cta:hover {
-  background: var(--colors-text-secondary) !important;
-  color: var(--colors-white) !important;
-  text-decoration: none !important;
+.header-burger:hover {
+  background: var(--colors-text-primary-5);
+}
+
+.header-burger-bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  border-radius: 1px;
+  background: currentColor;
+  transition: transform 0.2s, opacity 0.2s;
+}
+
+.header-burger[aria-expanded="true"] .header-burger-bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.header-burger[aria-expanded="true"] .header-burger-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.header-burger[aria-expanded="true"] .header-burger-bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Buttons — primary = dark (reference), secondary = outline */
@@ -320,7 +348,11 @@ a:hover {
   justify-content: center;
 }
 
-/* Sections */
+/* Sections — scroll-margin so anchor targets sit below sticky header */
+section[id] {
+  scroll-margin-top: 5.5rem;
+}
+
 .section {
   padding: var(--spacing-16) var(--px-section);
 }
@@ -834,8 +866,33 @@ a:hover {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .header-burger {
+    display: flex;
+  }
+
   .nav {
-    gap: var(--spacing-4);
+    display: none;
+    flex-basis: 100%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: var(--spacing-2) 0 var(--spacing-4);
+    border-top: 1px solid var(--colors-text-primary-5);
+    margin-top: var(--spacing-2);
+  }
+
+  .nav.nav--open {
+    display: flex;
+  }
+
+  .nav a {
+    padding: var(--spacing-3) 0;
+    font-size: var(--fontSize-base);
+    border-bottom: 1px solid var(--colors-text-primary-5);
+  }
+
+  .nav a:last-child {
+    border-bottom: none;
   }
 
   .header-inner {
@@ -861,14 +918,6 @@ a:hover {
 }
 
 @media (max-width: 640px) {
-  .nav a:not(.nav-cta) {
-    display: none;
-  }
-
-  .nav {
-    gap: 0;
-  }
-
   .hero-headline {
     font-size: var(--fontSize-4xl);
   }

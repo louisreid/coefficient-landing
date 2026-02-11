@@ -5,7 +5,7 @@ const REGISTER_URL = "https://tally.so/r/WO5oMk";
 export default function Hero() {
   return (
     <section
-      className="relative content-px py-12 lg:flex lg:min-h-[600px] lg:items-center lg:gap-12 lg:py-16"
+      className="relative content-px pt-12 pb-28 lg:flex lg:min-h-[600px] lg:items-center lg:gap-12 lg:py-16"
       aria-label="Hero"
     >
       <div className="mx-auto w-full max-w-7xl lg:flex lg:items-center lg:gap-12">
@@ -77,31 +77,12 @@ export default function Hero() {
             <div className="divide-y divide-text-primary/5">
               <div className="flex gap-4 bg-surface-base/30 p-4">
                 <div className="relative h-16 w-24 flex-shrink-0 overflow-hidden rounded bg-gray-200">
-                  <div className="absolute inset-0 flex items-center justify-center text-gray-400">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-6 w-6"
-                    >
-                      <rect
-                        width="18"
-                        height="18"
-                        x="3"
-                        y="3"
-                        rx="2"
-                        ry="2"
-                      />
-                      <circle cx="9" cy="9" r="2" />
-                      <path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21" />
-                    </svg>
-                  </div>
+                  <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{
+                      backgroundImage: "url(/images/hero-card-thumb.png)",
+                    }}
+                  />
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="mb-1 flex items-center justify-between">
@@ -124,22 +105,30 @@ export default function Hero() {
                 </div>
               </div>
               <div className="flex gap-4 p-4">
-                <div className="flex h-16 w-24 flex-shrink-0 items-center justify-center rounded bg-gray-100">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-6 w-6 text-gray-300"
-                  >
-                    <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5" />
-                    <rect x="2" y="6" width="14" height="12" rx="2" />
-                  </svg>
+                <div className="relative h-16 w-24 flex-shrink-0 overflow-hidden rounded bg-gray-100">
+                  <div
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                    style={{
+                      backgroundImage: "url(/images/hero-video-thumb.png)",
+                    }}
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center bg-black/30">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="h-8 w-8 text-white drop-shadow-md"
+                    >
+                      <path d="m16 13 5.223 3.482a.5.5 0 0 0 .777-.416V7.87a.5.5 0 0 0-.752-.432L16 10.5" />
+                      <rect x="2" y="6" width="14" height="12" rx="2" />
+                    </svg>
+                  </div>
                 </div>
                 <div className="min-w-0 flex-1">
                   <div className="mb-1 flex items-center justify-between">
@@ -160,49 +149,13 @@ export default function Hero() {
           {/* Phone mockup */}
           <div className="absolute -bottom-12 -right-4 z-20 aspect-[9/18] w-48 overflow-hidden rounded-[2rem] border-[4px] border-surface-dark bg-surface-dark shadow-2xl">
             <div className="relative h-full w-full bg-gray-800">
-              <div className="absolute inset-0 bg-gray-700">
-                <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="h-20 w-20 opacity-50 text-gray-600"
-                  >
-                    <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
-                    <circle cx="12" cy="7" r="4" />
-                  </svg>
-                </div>
-              </div>
-              <div className="absolute left-4 right-4 top-8">
-                <div className="mb-2 rounded border-l-2 border-white bg-status-warning/90 p-2 text-[10px] text-white shadow-lg backdrop-blur">
-                  <div className="flex items-center gap-1 font-bold">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="h-3 w-3"
-                    >
-                      <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
-                      <path d="M12 9v4" />
-                      <path d="M12 17h.01" />
-                    </svg>
-                    <span>AI DETECTION</span>
-                  </div>
-                  <span>Possible missing eye protection</span>
-                </div>
-              </div>
+              <div
+                className="absolute inset-0 bg-gray-700 bg-cover bg-center bg-no-repeat"
+                style={{
+                  backgroundImage: "url(/images/hero-phone-bg.png)",
+                  backgroundPosition: "80% 50%",
+                }}
+              />
               <div className="absolute bottom-6 left-0 right-0 flex justify-center">
                 <div className="h-12 w-12 rounded-full border-4 border-white" />
               </div>
