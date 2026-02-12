@@ -10,40 +10,53 @@ export default function HomePage() {
 
       <section className="section how-it-works" id="how-it-works">
         <div className="section-inner">
-          <h2 className="section-title">How it works</h2>
-          <div className="steps">
-            <article className="step-card">
-              <span className="step-num">1</span>
-              <h3 className="step-title">Wear and connect</h3>
-              <p className="step-desc">
-                The engineer wears a body-mounted camera and uses a mobile
-                device. No manual checklists.
-              </p>
-            </article>
-            <article className="step-card">
-              <span className="step-num">2</span>
-              <h3 className="step-title">Follow the procedure</h3>
-              <p className="step-desc">
-                Coefficient follows the approved procedure step-by-step, so work
-                stays on track without second visits.
-              </p>
-            </article>
-            <article className="step-card">
-              <span className="step-num">3</span>
-              <h3 className="step-title">Verify in real time</h3>
-              <p className="step-desc">
-                The system verifies correct execution and flags mistakes
-                instantly — no write-ups after the fact.
-              </p>
-            </article>
-            <article className="step-card">
-              <span className="step-num">4</span>
-              <h3 className="step-title">Evidence and reports</h3>
-              <p className="step-desc">
-                Evidence and reports are generated automatically after the job.
-                Time saved, every time.
-              </p>
-            </article>
+          <div className="how-it-works-layout">
+            <div className="how-it-works-image">
+              <Image
+                src="/images/chest-mount-phone.png"
+                alt="Smartphone mounted on chest harness for hands-free use"
+                width={480}
+                height={640}
+                className="how-it-works-img"
+              />
+            </div>
+            <div className="how-it-works-content">
+              <h2 className="section-title">How it works</h2>
+              <div className="steps">
+                <article className="step-card">
+                  <span className="step-num">1</span>
+                  <h3 className="step-title">Wear and connect</h3>
+                  <p className="step-desc">
+                    The engineer wears a body-mounted camera and uses a mobile
+                    device. No manual checklists.
+                  </p>
+                </article>
+                <article className="step-card">
+                  <span className="step-num">2</span>
+                  <h3 className="step-title">Follow the procedure</h3>
+                  <p className="step-desc">
+                    Coefficient follows the approved procedure step-by-step, so
+                    work stays on track without second visits.
+                  </p>
+                </article>
+                <article className="step-card">
+                  <span className="step-num">3</span>
+                  <h3 className="step-title">Verify in real time</h3>
+                  <p className="step-desc">
+                    The system verifies correct execution and flags mistakes
+                    instantly — no write-ups after the fact.
+                  </p>
+                </article>
+                <article className="step-card">
+                  <span className="step-num">4</span>
+                  <h3 className="step-title">Evidence and reports</h3>
+                  <p className="step-desc">
+                    Evidence and reports are generated automatically after the
+                    job. Time saved, every time.
+                  </p>
+                </article>
+              </div>
+            </div>
           </div>
         </div>
       </section>

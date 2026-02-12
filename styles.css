@@ -473,7 +473,48 @@ section[id] {
   max-width: 36rem;
 }
 
-/* How it works — cards like reference: bg-white border border-text-primary/5 rounded-lg */
+/* How it works — two-column layout: image + steps; cards like reference */
+.how-it-works .how-it-works-layout {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-10);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .how-it-works .how-it-works-layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--spacing-12);
+  }
+
+  .how-it-works .how-it-works-image {
+    flex: 0 0 40%;
+    max-width: 420px;
+  }
+
+  .how-it-works .how-it-works-content {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+.how-it-works .how-it-works-image {
+  width: 100%;
+  max-width: 360px;
+  border-radius: var(--borderRadius-lg);
+  overflow: hidden;
+  border: 1px solid var(--colors-text-primary-5);
+  background: var(--colors-surface-card);
+}
+
+.how-it-works .how-it-works-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
 .how-it-works .steps {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
